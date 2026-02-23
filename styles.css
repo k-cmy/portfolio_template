@@ -201,6 +201,22 @@ nav a:hover { color: white; }
     gap: 14px;
 }
 
+.featured-grid {
+    margin-top: 18px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 14px;
+}
+
+.featured-card {
+    border-radius: 18px;
+    padding: 16px;
+}
+
+.featured-card h3 { margin: 0 0 8px; }
+.featured-card p { margin: 0 0 10px; color: var(--muted); }
+.featured-card span { color: #d8deff; font-size: 0.84rem; }
+
 .repo-card {
     border-radius: 18px;
     padding: 16px;
@@ -213,6 +229,35 @@ nav a:hover { color: white; }
 .repo-card p { margin: 0 0 10px; color: var(--muted); min-height: 42px; }
 .repo-meta { display: flex; justify-content: space-between; color: #d8deff; font-size: 0.84rem; }
 .repo-state { color: var(--muted); }
+
+.cert-grid {
+    margin-top: 18px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 14px;
+}
+
+.cert-card {
+    border-radius: 16px;
+    padding: 16px;
+}
+
+.cert-card h3 { margin: 0 0 8px; font-size: 1rem; }
+.cert-card p { margin: 0; color: var(--muted); }
+
+.contact-links {
+    margin-top: 14px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.contact-links a {
+    color: #d8e5ff;
+    text-decoration: none;
+}
+
+.contact-links a i { margin-right: 8px; color: var(--accent); }
 
 .contact-form { display: grid; gap: 10px; }
 .contact-form input, .contact-form textarea {
@@ -246,8 +291,31 @@ nav a:hover { color: white; }
 }
 
 @media (max-width: 900px) {
-    nav, .chip { display: none; }
+    .top-nav {
+        border-radius: 22px;
+        flex-wrap: wrap;
+        justify-content: center;
+        padding: 12px;
+    }
+    .brand {
+        width: 100%;
+        justify-content: center;
+    }
+    nav {
+        display: flex;
+        width: 100%;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 8px 14px;
+    }
+    nav a {
+        padding: 6px 10px;
+        border-radius: 999px;
+        background: rgba(255, 255, 255, 0.06);
+    }
+    .chip { display: none; }
     .hero, .split { grid-template-columns: 1fr; }
     .stat-cards { grid-template-columns: 1fr; }
     .stack-grid { grid-template-columns: repeat(2, 1fr); }
+    .featured-grid, .cert-grid { grid-template-columns: 1fr; }
 }

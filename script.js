@@ -10,16 +10,13 @@ const dom = {
 };
 
 async function loadRepos(username) {
-    dom.repoState.textContent = `Loading repositories for @${username}...`;
+    dom.repoState.textContent = `Loading projects for @${username}...`;
     dom.repoGrid.innerHTML = '';
 
     try {
-        const res = await fetch(`https://api.github.com/users/${username}/repos?sort=updated&per_page=12`);
-        if (!res.ok) throw new Error('Unable to fetch repositories.');
-
-        const repos = await res.json();
+        const repos = await fetchAllUserRepos(username);
         if (!Array.isArray(repos) || repos.length === 0) {
-            dom.repoState.textContent = `No public repositories found for @${username}.`;
+            dom.repoState.textContent = `No public projects found for @${username}.`;
             updateStats([]);
             return;
         }
@@ -27,36 +24,89 @@ async function loadRepos(username) {
         const nonForkRepos = repos.filter(repo => !repo.fork);
         const displayRepos = nonForkRepos.slice(0, 8);
         renderRepos(displayRepos);
-        updateStats(nonForkRepos);
+        updateStats(repos);
 
-        dom.repoState.textContent = `Showing ${displayRepos.length} recently updated repositories.`;
+        dom.repoState.textContent =
+            `Showing ${displayRepos.length} recently updated projects from ${repos.length} public repositories.`;
     } catch (error) {
-        dom.repoState.textContent = 'Failed to load GitHub repositories. Check username or API rate limits.';
+        dom.repoState.textContent = 'Failed to load GitHub projects. Check username or API rate limits.';
     }
 }
 
-function renderRepos(repos) {
-    dom.repoGrid.innerHTML = repos
-        .map(repo => {
-            const language = repo.language || 'N/A';
-            const description = repo.description || 'No description added yet.';
+async function fetchAllUserRepos(username) {
+    const perPage = 100;
+    let page = 1;
+    const allRepos = [];
 
-            return `
-                <article class="repo-card glass">
-                    <h3><a target="_blank" rel="noopener" href="${repo.html_url}">${repo.name}</a></h3>
-                    <p>${description}</p>
-                    <div class="repo-meta">
-                        <span><i class="fa-solid fa-code-branch"></i> ${language}</span>
-                        <span><i class="fa-solid fa-star"></i> ${repo.stargazers_count}</span>
-                    </div>
-                </article>
-            `;
-        })
-        .join('');
+    while (true) {
+        const res = await fetch(
+            `https://api.github.com/users/${encodeURIComponent(username)}/repos?sort=updated&per_page=${perPage}&page=${page}`
+        );
+        if (!res.ok) throw new Error('Unable to fetch repositories.');
+
+        const pageRepos = await res.json();
+        if (!Array.isArray(pageRepos)) throw new Error('Unexpected GitHub API response.');
+
+        allRepos.push(...pageRepos);
+
+        if (pageRepos.length < perPage) break;
+        page += 1;
+    }
+
+    return allRepos;
+}
+
+function renderRepos(repos) {
+    dom.repoGrid.textContent = '';
+
+    repos.forEach(repo => {
+        const language = repo.language || 'N/A';
+        const description = repo.description || 'No description added yet.';
+        const stars = Number.isFinite(repo.stargazers_count) ? repo.stargazers_count : 0;
+
+        const article = document.createElement('article');
+        article.className = 'repo-card glass';
+
+        const title = document.createElement('h3');
+        const link = document.createElement('a');
+        link.target = '_blank';
+        link.rel = 'noopener';
+        link.textContent = repo.name || 'Unnamed repository';
+
+        const safeHref = typeof repo.html_url === 'string' ? repo.html_url : '';
+        link.href = safeHref.startsWith('https://github.com/') ? safeHref : 'https://github.com';
+
+        title.appendChild(link);
+
+        const descriptionText = document.createElement('p');
+        descriptionText.textContent = description;
+
+        const meta = document.createElement('div');
+        meta.className = 'repo-meta';
+
+        const languageStat = document.createElement('span');
+        const languageIcon = document.createElement('i');
+        languageIcon.className = 'fa-solid fa-code-branch';
+        languageStat.appendChild(languageIcon);
+        languageStat.append(` ${language}`);
+
+        const starStat = document.createElement('span');
+        const starIcon = document.createElement('i');
+        starIcon.className = 'fa-solid fa-star';
+        starStat.appendChild(starIcon);
+        starStat.append(` ${stars}`);
+
+        meta.append(languageStat, starStat);
+        article.append(title, descriptionText, meta);
+        dom.repoGrid.appendChild(article);
+    });
 }
 
 function updateStats(repos) {
-    const stars = repos.reduce((sum, repo) => sum + repo.stargazers_count, 0);
+    const stars = repos.reduce(
+        (sum, repo) => sum + (Number.isFinite(repo.stargazers_count) ? repo.stargazers_count : 0),
+        0
+    );
     const languageCounter = repos.reduce((acc, repo) => {
         if (!repo.language) return acc;
         acc[repo.language] = (acc[repo.language] || 0) + 1;
