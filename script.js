@@ -9,12 +9,16 @@ const dom = {
     contactForm: document.getElementById('contactForm')
 };
 
+const DEFAULT_GITHUB_USERNAME = 'k-cmy';
+const GITHUB_REPOS_PER_PAGE = 100;
+const MAX_GITHUB_REPO_PAGES = 5;
+
 async function loadRepos(username) {
     dom.repoState.textContent = `Loading projects for @${username}...`;
     dom.repoGrid.innerHTML = '';
 
     try {
-        const repos = await fetchAllUserRepos(username);
+        const { repos, truncated } = await fetchAllUserRepos(username);
         if (!Array.isArray(repos) || repos.length === 0) {
             dom.repoState.textContent = `No public projects found for @${username}.`;
             updateStats([]);
@@ -24,23 +28,24 @@ async function loadRepos(username) {
         const nonForkRepos = repos.filter(repo => !repo.fork);
         const displayRepos = nonForkRepos.slice(0, 8);
         renderRepos(displayRepos);
-        updateStats(repos);
+        updateStats(nonForkRepos);
 
-        dom.repoState.textContent =
-            `Showing ${displayRepos.length} recently updated projects from ${repos.length} public repositories.`;
+        dom.repoState.textContent = truncated
+            ? `Showing ${displayRepos.length} recently updated projects from the first ${repos.length} repositories loaded (request cap reached).`
+            : `Showing ${displayRepos.length} recently updated projects from ${repos.length} public repositories.`;
     } catch (error) {
         dom.repoState.textContent = 'Failed to load GitHub projects. Check username or API rate limits.';
     }
 }
 
 async function fetchAllUserRepos(username) {
-    const perPage = 100;
     let page = 1;
     const allRepos = [];
+    let truncated = false;
 
-    while (true) {
+    while (page <= MAX_GITHUB_REPO_PAGES) {
         const res = await fetch(
-            `https://api.github.com/users/${encodeURIComponent(username)}/repos?sort=updated&per_page=${perPage}&page=${page}`
+            `https://api.github.com/users/${encodeURIComponent(username)}/repos?sort=updated&per_page=${GITHUB_REPOS_PER_PAGE}&page=${page}`
         );
         if (!res.ok) throw new Error('Unable to fetch repositories.');
 
@@ -49,11 +54,15 @@ async function fetchAllUserRepos(username) {
 
         allRepos.push(...pageRepos);
 
-        if (pageRepos.length < perPage) break;
+        if (pageRepos.length < GITHUB_REPOS_PER_PAGE) break;
         page += 1;
     }
 
-    return allRepos;
+    if (page > MAX_GITHUB_REPO_PAGES && allRepos.length > 0) {
+        truncated = true;
+    }
+
+    return { repos: allRepos, truncated };
 }
 
 function renderRepos(repos) {
@@ -135,9 +144,9 @@ function showToast(message) {
 
 if (dom.reloadRepos) {
     dom.reloadRepos.addEventListener('click', () => {
-        const username = dom.githubUser.value.trim();
-        if (!username) return showToast('Please enter a GitHub username.');
-        loadRepos(username);
+        const username = dom.githubUser?.value?.trim();
+        if (!username && dom.githubUser) return showToast('Please enter a GitHub username.');
+        loadRepos(username || DEFAULT_GITHUB_USERNAME);
     });
 }
 
@@ -149,4 +158,4 @@ if (dom.contactForm) {
     });
 }
 
-loadRepos(dom.githubUser?.value?.trim() || 'kimberley');
+loadRepos(dom.githubUser?.value?.trim() || DEFAULT_GITHUB_USERNAME);
