@@ -315,14 +315,18 @@ if (dom.contactForm) {
         event.preventDefault();
         const formData = new FormData(dom.contactForm);
 
-        fetch('/', {
+        fetch(dom.contactForm.action, {
             method: 'POST',
-            headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-            body: new URLSearchParams(formData).toString()
+            body: formData,
+            headers: { 'Accept': 'application/json' }
         })
-        .then(() => {
-            showToast('Message sent! I\'ll get back to you soon.');
-            dom.contactForm.reset();
+        .then(res => {
+            if (res.ok) {
+                showToast('Message sent! I\'ll get back to you soon.');
+                dom.contactForm.reset();
+            } else {
+                showToast('Something went wrong. Please try again.');
+            }
         })
         .catch(() => {
             showToast('Something went wrong. Please try again.');
