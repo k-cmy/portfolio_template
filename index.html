@@ -27,6 +27,7 @@
         </a>
         <nav>
             <span class="nav-indicator" id="navIndicator"></span>
+            <a href="#experience">Experience</a>
             <a href="#projects">Projects</a>
             <a href="#skills">Skills</a>
             <a href="#certifications">Certifications</a>
@@ -50,16 +51,56 @@
                     <span class="typing-cursor">|</span>
                 </div>
                 <p class="hero-description">
-                    Fresh CS graduate passionate about full-stack development, data-driven
-                    applications, and machine learning. I turn ideas into clean, practical software.
+                    CS graduate and ex-Huawei Cloud intern with hands-on experience in MLOps,
+                    full-stack development, and AI-powered applications. I build end-to-end
+                    solutions from deep learning models to cloud-deployed APIs.
                 </p>
                 <div class="hero-cta">
                     <a href="#projects" class="btn btn-primary magnetic">View My Work</a>
                     <a href="#contact" class="btn btn-ghost magnetic">Get In Touch</a>
                     <div class="hero-socials">
                         <a href="https://github.com/k-cmy" target="_blank" rel="noopener" aria-label="GitHub" class="magnetic"><i class="fab fa-github"></i></a>
-                        <a href="#" aria-label="LinkedIn" class="magnetic"><i class="fab fa-linkedin"></i></a>
-                        <a href="mailto:you@example.com" aria-label="Email" class="magnetic"><i class="fas fa-envelope"></i></a>
+                        <a href="https://www.linkedin.com/in/kimberley-chung-min-yi/" aria-label="LinkedIn" class="magnetic"><i class="fab fa-linkedin"></i></a>
+                        <a href="mailto:kimboiboi1223@gmail.com" aria-label="Email" class="magnetic"><i class="fas fa-envelope"></i></a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Experience -->
+        <section id="experience" class="section">
+            <p class="eyebrow center">Experience</p>
+            <h2 class="section-title center">Work Experience</h2>
+
+            <div class="experience-card glass tilt-card reveal">
+                <div class="card-glow"></div>
+                <div class="exp-timeline">
+                    <div class="exp-dot"></div>
+                    <div class="exp-line"></div>
+                </div>
+                <div class="exp-content">
+                    <div class="exp-header">
+                        <div>
+                            <h3>Cloud Solutions Architect Intern</h3>
+                            <p class="exp-company"><img src="https://cdn.simpleicons.org/huawei/fff" alt="Huawei" width="16" height="16" /> Huawei Cloud Malaysia</p>
+                        </div>
+                        <span class="exp-period">Nov 2024 – Feb 2025</span>
+                    </div>
+                    <p class="exp-desc">Designed and deployed end-to-end MLOps automation pipelines on Huawei Cloud, enabling clients to predict future pricing by simply uploading data. Productionized an XGBoost model using ModelArts Workflow to automate training, model registration, and real-time service deployment across OBS, SWR, and ECS.</p>
+                    <p class="exp-desc">Built a serverless file transfer system using FunctionGraph that auto-triggers on OBS uploads, securely transfers files to SFTP servers via Paramiko, and handles credential management and retry logic for fault tolerance.</p>
+                    <div class="tech-tags">
+                        <span>ModelArts</span>
+                        <span>OBS</span>
+                        <span>ECS</span>
+                        <span>SWR</span>
+                        <span>FunctionGraph</span>
+                        <span>Python</span>
+                        <span>Docker</span>
+                        <span>XGBoost</span>
+                        <span>MLOps</span>
+                    </div>
+                    <div class="exp-links">
+                        <a href="https://k-cmy.github.io/Certificates/Internship%20Completion%20cert.pdf" target="_blank" rel="noopener"><i class="fas fa-certificate"></i> Completion Certificate</a>
                     </div>
                 </div>
             </div>
@@ -75,19 +116,24 @@
                 <article class="project-card glass tilt-card reveal">
                     <div class="card-glow"></div>
                     <div class="project-preview">
-                        <div class="preview-placeholder"><i class="fas fa-laptop-code"></i></div>
+                        <div class="preview-placeholder"><i class="fas fa-university"></i></div>
                     </div>
                     <div class="project-body">
-                        <h3>Student Management System</h3>
-                        <p>Full CRUD web app with role-based access control and a responsive dashboard for managing student records, grades, and enrollment.</p>
+                        <h3>67-Bank API <span class="project-badge">In Progress</span></h3>
+                        <span class="project-date">Jan 2026 – Present</span>
+                        <p>Secure backend digital banking REST API with JWT-based stateless authentication, role-based access control (Admin, Customer, Auditor), user profile management, and async email notifications with custom Thymeleaf templates.</p>
                         <div class="tech-tags">
-                            <span>React</span>
-                            <span>Node.js</span>
-                            <span>SQL</span>
-                            <span>Express</span>
+                            <span>Java 21</span>
+                            <span>Spring Boot</span>
+                            <span>Spring Security</span>
+                            <span>JWT</span>
+                            <span>MySQL</span>
+                            <span>Hibernate</span>
+                            <span>Thymeleaf</span>
+                            <span>Maven</span>
                         </div>
                         <div class="project-actions">
-                            <a href="https://github.com/k-cmy" target="_blank" rel="noopener" class="btn btn-ghost btn-sm"><i class="fab fa-github"></i> GitHub</a>
+                            <a href="https://github.com/k-cmy/67-bank" target="_blank" rel="noopener" class="btn btn-ghost btn-sm"><i class="fab fa-github"></i> GitHub</a>
                         </div>
                     </div>
                 </article>
@@ -95,19 +141,22 @@
                 <article class="project-card glass tilt-card reveal">
                     <div class="card-glow"></div>
                     <div class="project-preview">
-                        <div class="preview-placeholder"><i class="fas fa-chart-line"></i></div>
+                        <div class="preview-placeholder"><i class="fas fa-robot"></i></div>
                     </div>
                     <div class="project-body">
-                        <h3>House Price Prediction Model</h3>
-                        <p>Trained and evaluated multiple ML models for real estate price prediction with feature engineering, cross-validation, and data visualization.</p>
+                        <h3>RAG Financial Analyzer API </h3>
+                        <span class="project-date">Feb 2026</span>
+                        <p>Backend API that ingests financial documents (PDF/TXT/MD), chunks and embeds them into a vector database, and answers questions through a Retrieval-Augmented Generation pipeline powered by Gemini LLM.</p>
                         <div class="tech-tags">
                             <span>Python</span>
-                            <span>scikit-learn</span>
-                            <span>Pandas</span>
-                            <span>Matplotlib</span>
+                            <span>FastAPI</span>
+                            <span>LangChain</span>
+                            <span>ChromaDB</span>
+                            <span>Gemini API</span>
+                            <span>Docker</span>
                         </div>
                         <div class="project-actions">
-                            <a href="https://github.com/k-cmy" target="_blank" rel="noopener" class="btn btn-ghost btn-sm"><i class="fab fa-github"></i> GitHub</a>
+                            <a href="https://github.com/k-cmy/rag-financial-analyzer-api" target="_blank" rel="noopener" class="btn btn-ghost btn-sm"><i class="fab fa-github"></i> GitHub</a>
                         </div>
                     </div>
                 </article>
@@ -115,20 +164,71 @@
                 <article class="project-card glass tilt-card reveal">
                     <div class="card-glow"></div>
                     <div class="project-preview">
-                        <div class="preview-placeholder"><i class="fas fa-tasks"></i></div>
+                        <div class="preview-placeholder"><i class="fas fa-image"></i></div>
                     </div>
                     <div class="project-body">
-                        <h3>Task Planner App</h3>
-                        <p>Productivity app with smart reminders, priority levels, drag-and-drop organization, and local persistence for offline use.</p>
+                        <h3>Effective Color Cast Removal</h3>
+                        <span class="project-date">Mar 2025 – Jun 2025 · Final Year Project</span>
+                        <p>Full-stack web application for automatic color cast removal from images using a custom deep learning model trained with TensorFlow/Keras. Features a React dashboard with image comparison, RGB histogram visualization, and processing history, backed by a Flask API deployed on Google Cloud Run.</p>
                         <div class="tech-tags">
-                            <span>JavaScript</span>
-                            <span>HTML</span>
-                            <span>CSS</span>
-                            <span>LocalStorage</span>
+                            <span>TensorFlow</span>
+                            <span>Keras</span>
+                            <span>Python</span>
+                            <span>Flask</span>
+                            <span>React</span>
+                            <span>Google Cloud Run</span>
+                            <span>Docker</span>
                         </div>
                         <div class="project-actions">
-                            <a href="https://github.com/k-cmy" target="_blank" rel="noopener" class="btn btn-ghost btn-sm"><i class="fab fa-github"></i> GitHub</a>
-                            <a href="#" target="_blank" rel="noopener" class="btn btn-primary btn-sm"><i class="fas fa-external-link-alt"></i> Live Site</a>
+                            <a href="https://github.com/k-cmy/color_cast_removal" target="_blank" rel="noopener" class="btn btn-ghost btn-sm"><i class="fab fa-github"></i> Model</a>
+                            <a href="https://github.com/aphyueh/ccrfrontend" target="_blank" rel="noopener" class="btn btn-ghost btn-sm"><i class="fab fa-github"></i> Frontend</a>
+                            <a href="https://github.com/aphyueh/ccrbackend" target="_blank" rel="noopener" class="btn btn-ghost btn-sm"><i class="fab fa-github"></i> Backend</a>
+                            <a href="https://colorcastremoval.netlify.app/admin/dashboard" target="_blank" rel="noopener" class="btn btn-primary btn-sm"><i class="fas fa-external-link-alt"></i> Live Site</a>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="project-card glass tilt-card reveal">
+                    <div class="card-glow"></div>
+                    <div class="project-preview">
+                        <div class="preview-placeholder"><i class="fas fa-broadcast-tower"></i></div>
+                    </div>
+                    <div class="project-body">
+                        <h3>AWAS Streaming System</h3>
+                        <span class="project-date">May 2025 · FIT3182 Big Data</span>
+                        <p>Real-time speed enforcement platform simulating a three-camera highway segment. Kafka producers stream vehicle events into Spark Structured Streaming for violation detection (instantaneous and average speed), with results stored in MongoDB and visualized via interactive dashboards.</p>
+                        <div class="tech-tags">
+                            <span>Apache Kafka</span>
+                            <span>Spark Streaming</span>
+                            <span>MongoDB</span>
+                            <span>Python</span>
+                            <span>PySpark</span>
+                            <span>Docker</span>
+                        </div>
+                        <div class="project-actions">
+                            <a href="https://github.com/k-cmy/Data_Streaming_AWAS" target="_blank" rel="noopener" class="btn btn-ghost btn-sm"><i class="fab fa-github"></i> GitHub</a>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="project-card glass tilt-card reveal">
+                    <div class="card-glow"></div>
+                    <div class="project-preview">
+                        <div class="preview-placeholder"><i class="fas fa-gamepad"></i></div>
+                    </div>
+                    <div class="project-body">
+                        <h3>Tetris Game</h3>
+                        <span class="project-date">Aug 2023 – Sep 2023 · FIT 2102 Programming Paradigms</span>
+                        <p>Reactive rendition of the classic Tetris game built with Functional Reactive Programming principles. Uses RxJS observables for game state management, keyboard input streams, and tick-based rendering for a clean, declarative codebase.</p>
+                        <div class="tech-tags">
+                            <span>TypeScript</span>
+                            <span>RxJS</span>
+                            <span>HTML</span>
+                            <span>CSS</span>
+                            <span>FRP</span>
+                        </div>
+                        <div class="project-actions">
+                            <a href="https://kcmy-tetris-game-rxjs.netlify.app/" target="_blank" rel="noopener" class="btn btn-primary btn-sm"><i class="fas fa-external-link-alt"></i> Live Site</a>
                         </div>
                     </div>
                 </article>
@@ -147,45 +247,91 @@
                     <h3><i class="fas fa-code"></i> Languages</h3>
                     <div class="skill-list">
                         <span class="skill-pill"><i class="fab fa-python"></i> Python</span>
-                        <span class="skill-pill"><i class="fab fa-js"></i> JavaScript</span>
                         <span class="skill-pill"><i class="fab fa-java"></i> Java</span>
                         <span class="skill-pill"><i class="fas fa-database"></i> SQL</span>
-                        <span class="skill-pill"><i class="fas fa-code"></i> C++</span>
+                        <span class="skill-pill"><i class="fas fa-chart-area"></i> R</span>
+                        <span class="skill-pill"><i class="fab fa-js"></i> JavaScript</span>
+                        <span class="skill-pill"><i class="fas fa-code"></i> TypeScript</span>
+                        <span class="skill-pill"><i class="fab fa-html5"></i> HTML</span>
+                        <span class="skill-pill"><i class="fab fa-css3-alt"></i> CSS</span>
+                        <span class="skill-pill"><i class="fas fa-code"></i> Haskell</span>
                     </div>
                 </div>
 
                 <div class="skill-category glass tilt-card reveal">
                     <div class="card-glow"></div>
-                    <h3><i class="fas fa-palette"></i> Front-end</h3>
+                    <h3><i class="fas fa-brain"></i> AI & Machine Learning</h3>
                     <div class="skill-list">
-                        <span class="skill-pill"><i class="fab fa-react"></i> React</span>
-                        <span class="skill-pill"><i class="fab fa-html5"></i> HTML5</span>
-                        <span class="skill-pill"><i class="fab fa-css3-alt"></i> CSS3</span>
-                        <span class="skill-pill"><i class="fab fa-bootstrap"></i> Bootstrap</span>
-                        <span class="skill-pill"><i class="fas fa-wind"></i> Tailwind</span>
+                        <span class="skill-pill"><i class="fas fa-network-wired"></i> TensorFlow</span>
+                        <span class="skill-pill"><i class="fas fa-network-wired"></i> Keras</span>
+                        <span class="skill-pill"><i class="fas fa-fire"></i> PyTorch</span>
+                        <span class="skill-pill"><i class="fas fa-chart-bar"></i> scikit-learn</span>
+                        <span class="skill-pill"><i class="fas fa-link"></i> LangChain</span>
+                        <span class="skill-pill"><i class="fas fa-robot"></i> Gemini API</span>
+                        <span class="skill-pill"><i class="fas fa-eye"></i> OpenCV</span>
+                        <span class="skill-pill"><i class="fas fa-image"></i> scikit-image</span>
+                        <span class="skill-pill"><i class="fas fa-chart-line"></i> statsmodels</span>
                     </div>
                 </div>
 
                 <div class="skill-category glass tilt-card reveal">
                     <div class="card-glow"></div>
-                    <h3><i class="fas fa-server"></i> Back-end</h3>
+                    <h3><i class="fas fa-database"></i> Data & Analytics</h3>
                     <div class="skill-list">
-                        <span class="skill-pill"><i class="fab fa-node-js"></i> Node.js</span>
-                        <span class="skill-pill"><i class="fas fa-fire"></i> Firebase</span>
+                        <span class="skill-pill"><i class="fas fa-table"></i> Pandas</span>
+                        <span class="skill-pill"><i class="fas fa-calculator"></i> NumPy</span>
+                        <span class="skill-pill"><i class="fas fa-chart-area"></i> Matplotlib</span>
+                        <span class="skill-pill"><i class="fas fa-bolt"></i> PySpark</span>
+                        <span class="skill-pill"><i class="fas fa-stream"></i> Apache Kafka</span>
                         <span class="skill-pill"><i class="fas fa-database"></i> MongoDB</span>
-                        <span class="skill-pill"><i class="fas fa-cogs"></i> Express</span>
+                        <span class="skill-pill"><i class="fas fa-database"></i> MySQL</span>
+                        <span class="skill-pill"><i class="fas fa-chart-pie"></i> Tableau</span>
+                        <span class="skill-pill"><i class="fas fa-chart-bar"></i> Power BI</span>
                     </div>
                 </div>
 
                 <div class="skill-category glass tilt-card reveal">
                     <div class="card-glow"></div>
-                    <h3><i class="fas fa-tools"></i> Tools & Others</h3>
+                    <h3><i class="fas fa-server"></i> Frameworks & Backend</h3>
+                    <div class="skill-list">
+                        <span class="skill-pill"><i class="fas fa-leaf"></i> Spring Boot</span>
+                        <span class="skill-pill"><i class="fas fa-bolt"></i> FastAPI</span>
+                        <span class="skill-pill"><i class="fas fa-flask"></i> Flask</span>
+                        <span class="skill-pill"><i class="fab fa-react"></i> React</span>
+                        <span class="skill-pill"><i class="fas fa-exchange-alt"></i> REST APIs</span>
+                        <span class="skill-pill"><i class="fas fa-shield-alt"></i> Spring Security</span>
+                    </div>
+                </div>
+
+                <div class="skill-category glass tilt-card reveal">
+                    <div class="card-glow"></div>
+                    <h3><i class="fas fa-cloud"></i> Cloud & MLOps</h3>
+                    <div class="skill-list">
+                        <span class="skill-pill"><i class="fab fa-docker"></i> Docker</span>
+                        <span class="skill-pill"><i class="fab fa-aws"></i> AWS S3</span>
+                        <span class="skill-pill"><i class="fas fa-cogs"></i> MLOps Pipelines</span>
+                        <span class="skill-pill"><i class="fas fa-cloud"></i> Huawei Cloud</span>
+                        <span class="skill-pill"><i class="fas fa-brain"></i> ModelArts</span>
+                        <span class="skill-pill"><i class="fas fa-hdd"></i> OBS</span>
+                        <span class="skill-pill"><i class="fas fa-server"></i> ECS</span>
+                        <span class="skill-pill"><i class="fas fa-box"></i> SWR</span>
+                        <span class="skill-pill"><i class="fas fa-bolt"></i> FunctionGraph</span>
+                    </div>
+                </div>
+
+                <div class="skill-category glass tilt-card reveal">
+                    <div class="card-glow"></div>
+                    <h3><i class="fas fa-tools"></i> Developer Tools</h3>
                     <div class="skill-list">
                         <span class="skill-pill"><i class="fab fa-git-alt"></i> Git</span>
                         <span class="skill-pill"><i class="fab fa-github"></i> GitHub</span>
-                        <span class="skill-pill"><i class="fas fa-brain"></i> ML / AI</span>
-                        <span class="skill-pill"><i class="fas fa-terminal"></i> Linux</span>
-                        <span class="skill-pill"><i class="fas fa-chart-bar"></i> Data Analysis</span>
+                        <span class="skill-pill"><i class="fas fa-code"></i> VS Code</span>
+                        <span class="skill-pill"><i class="fas fa-code"></i> IntelliJ IDEA</span>
+                        <span class="skill-pill"><i class="fas fa-code"></i> PyCharm</span>
+                        <span class="skill-pill"><i class="fab fa-android"></i> Android Studio</span>
+                        <span class="skill-pill"><i class="fab fa-google"></i> Google Colab</span>
+                        <span class="skill-pill"><i class="fas fa-satellite-dish"></i> Postman</span>
+                        <span class="skill-pill"><i class="fab fa-linux"></i> Linux</span>
                     </div>
                 </div>
             </div>
@@ -197,13 +343,27 @@
             <h2 class="section-title center">Continuous Learning</h2>
 
             <div class="cert-grid">
-                <div class="cert-card glass tilt-card reveal">
+                <a href="https://k-cmy.github.io/Certificates/010102601495809663011409.pdf" target="_blank" rel="noopener" class="cert-card glass tilt-card reveal cert-link">
                     <div class="card-glow"></div>
                     <div class="cert-icon"><img src="https://cdn.simpleicons.org/huawei/fff" alt="Huawei" width="28" height="28" /></div>
                     <h3>HCIA – Cloud Service V3.5</h3>
                     <p>Huawei Certified ICT Associate</p>
                     <span class="cert-date">Dec 2024 – Dec 2027</span>
-                </div>
+                </a>
+                <a href="https://www.datacamp.com/statement-of-accomplishment/course/e218cd9b8f274b376e8a87d60bb61ec709c0d9b5?raw=1" target="_blank" rel="noopener" class="cert-card glass tilt-card reveal cert-link">
+                    <div class="card-glow"></div>
+                    <div class="cert-icon"><img src="https://cdn.simpleicons.org/datacamp/fff" alt="DataCamp" width="28" height="28" /></div>
+                    <h3>AWS Concepts</h3>
+                    <p>DataCamp</p>
+                    <span class="cert-date">Feb 2026</span>
+                </a>
+                <a href="https://www.linkedin.com/learning/certificates/6e6de2f7cbd7bda3d296c01d0a2983424aefa9b1ca9f60703a847b928fc41524" target="_blank" rel="noopener" class="cert-card glass tilt-card reveal cert-link">
+                    <div class="card-glow"></div>
+                    <div class="cert-icon"> <i class="fab fa-linkedin" style="font-size:28px; color:#fff;"></i> </div>
+                    <h3>Complete Guide to Power BI for Data Analysts</h3>
+                    <p>LinkedIn Learning · Microsoft Press</p>
+                    <span class="cert-date">Jul 2024</span>
+                </a>
             </div>
         </section>
 
@@ -217,12 +377,15 @@
                 <div class="card-glow"></div>
                 <div class="award-badge"><i class="fas fa-trophy"></i></div>
                 <div class="award-content">
-                    <h3>1st Runner-Up — Final Year Project Awards</h3>
-                    <p>Monash University Malaysia, School of Information Technology</p>
+                    <h3>1st Runner Up — SOIT Outstanding FYP Award</h3>
+                    <p>Monash University Malaysia</p>
                     <p class="award-detail">
-                        Awarded 1st runner-up for our team's final year project, competing against peers across the School of IT.
+                        Awarded second prize at the Computer Science and Data Science Final Year Project (FYP) Award Day, organized by the School of Information Technology (SOIT) in collaboration with Ant International.
                     </p>
-                    <span class="award-period">Semester 1, June 2025</span>
+                    <span class="award-period">11 June 2025</span>
+                    <div class="exp-links" style="margin-top:12px">
+                        <a href="https://k-cmy.github.io/Certificates/FYP%20Award%20cert%20merged.pdf" target="_blank" rel="noopener"><i class="fas fa-certificate"></i> View Certificate</a>
+                    </div>
                 </div>
             </div>
         </section>
@@ -237,31 +400,37 @@
                 <div class="card-glow"></div>
                 <div class="about-content">
                     <p>
-                        Hey there! I'm Kimberley, a fresh Computer Science graduate with a passion for
-                        building things that live on the internet. I enjoy the full spectrum of development
-                        -- from crafting clean UIs to designing robust backend systems and training ML models.
+                        Hi! I'm Kimberley -- a Computer Science (Data Science) graduate from Monash University Malaysia
+                        and former Cloud Solutions Architect intern at Huawei. I've built everything from RAG-powered
+                        AI APIs and deep learning models to real-time big data streaming pipelines and full-stack
+                        web applications deployed on the cloud.
                     </p>
                     <p>
-                        Throughout my studies I built coursework and personal projects that strengthened my
-                        problem-solving, collaboration, and delivery skills. I'm always eager to learn new
-                        technologies and take on challenges that push me to grow as a developer.
+                        I'm currently seeking roles in full-stack development, backend engineering, cloud architecture,
+                        AI/ML engineering, or data science -- anywhere I can solve real problems with code and continue
+                        growing as an engineer.
                     </p>
                     <p>
-                        Currently I'm looking for entry-level software engineering opportunities where I can
-                        contribute, learn, and make an impact.
+                        <strong>Fun fact:</strong> Before I got into tech, I was a Malaysian national-trained
+                        <a href="https://www.gymnastics.sport/site/athletes/bio_detail.php?id=44301&type=licence" target="_blank" rel="noopener" style="color:var(--accent)">rhythmic gymnast</a>
+                        -- so I'm no stranger to discipline, precision, and pushing past limits.
                     </p>
                     <div class="about-highlights">
                         <div class="highlight-item">
                             <i class="fas fa-graduation-cap"></i>
-                            <span>BSc Computer Science</span>
+                            <span>BSc Computer Science in Data Science</span>
+                        </div>
+                        <div class="highlight-item">
+                            <i class="fas fa-globe"></i>
+                            <span>Open to On-Site/Remote/Hybrid</span>
                         </div>
                         <div class="highlight-item">
                             <i class="fas fa-map-marker-alt"></i>
-                            <span>Open to Remote & On-site</span>
+                            <span>Open to Full-Time Graduate/Junior Roles</span>
                         </div>
                         <div class="highlight-item">
                             <i class="fas fa-rocket"></i>
-                            <span>Full-Stack, Data & ML</span>
+                            <span>Full-Stack, Cloud, Data & AI</span>
                         </div>
                     </div>
                 </div>
@@ -280,12 +449,15 @@
                         a project idea, or just want to say hi -- my inbox is always open!
                     </p>
                     <div class="contact-links">
-                        <a href="mailto:you@example.com"><i class="fas fa-envelope"></i> you@example.com</a>
+                        <a href="mailto:kimboiboi1223@gmail.com"><i class="fas fa-envelope"></i> kimboiboi1223@gmail.com</a>
                         <a href="https://github.com/k-cmy" target="_blank" rel="noopener"><i class="fab fa-github"></i> GitHub</a>
-                        <a href="#"><i class="fab fa-linkedin"></i> LinkedIn</a>
+                        <a href="https://www.linkedin.com/in/kimberley-chung-min-yi/" target="_blank" rel="noopener"><i class="fab fa-linkedin"></i> LinkedIn</a>
+                        <!-- discord -->
+                        <a href="https://discord.com/users/823644444444444444" target="_blank" rel="noopener"><i class="fab fa-discord"></i> Discord</a>
                     </div>
                 </div>
-                <form id="contactForm" class="contact-form glass reveal">
+                <form id="contactForm" name="contact" method="POST" data-netlify="true" class="contact-form glass reveal">
+                    <input type="hidden" name="form-name" value="contact" />
                     <input type="text" name="name" placeholder="Your name" required />
                     <input type="email" name="email" placeholder="Your email" required />
                     <textarea name="message" rows="5" placeholder="Your message" required></textarea>

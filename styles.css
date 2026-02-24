@@ -90,9 +90,9 @@ body:hover .cursor-glow {
     will-change: transform;
 }
 
-.orb-a { width: 400px; height: 400px; background: #7f5cff; top: 5%; left: -120px; }
-.orb-b { width: 350px; height: 350px; background: #45f0ff; right: -100px; top: 40%; }
-.orb-c { width: 300px; height: 300px; background: #f486ff; bottom: -50px; left: 40%; }
+.orb-a { width: 400px; height: 400px; background: #7f5cff; top: 5%; left: -120px; animation: orbDriftA 18s ease-in-out infinite; }
+.orb-b { width: 350px; height: 350px; background: #45f0ff; right: -100px; top: 40%; animation: orbDriftB 22s ease-in-out infinite; }
+.orb-c { width: 300px; height: 300px; background: #f486ff; bottom: -50px; left: 40%; animation: orbDriftC 20s ease-in-out infinite; }
 
 /* ── Layout ── */
 main {
@@ -551,6 +551,28 @@ nav a.active {
     font-size: 0.9rem;
 }
 
+.project-badge {
+    display: inline-block;
+    font-size: 0.65rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    padding: 3px 10px;
+    border-radius: 999px;
+    background: rgba(255, 200, 55, 0.12);
+    border: 1px solid rgba(255, 200, 55, 0.25);
+    color: #ffc837;
+    vertical-align: middle;
+    margin-left: 8px;
+}
+
+.project-date {
+    display: inline-block;
+    font-size: 0.78rem;
+    color: var(--muted);
+    margin-bottom: 10px;
+}
+
 /* ── Skills ── */
 .skills-categories {
     display: grid;
@@ -655,6 +677,16 @@ nav a.active {
     font-size: 0.88rem;
 }
 
+a.cert-link {
+    text-decoration: none;
+    color: inherit;
+    cursor: pointer;
+}
+
+a.cert-link:hover h3 {
+    color: var(--accent);
+}
+
 .cert-date {
     display: inline-block;
     margin-top: 12px;
@@ -729,6 +761,132 @@ nav a.active {
     border: 1px solid rgba(114, 219, 255, 0.15);
     padding: 4px 12px;
     border-radius: 999px;
+}
+
+/* ── Experience ── */
+.experience-card {
+    border-radius: var(--radius);
+    padding: 36px;
+    max-width: 800px;
+    margin: 0 auto;
+    display: flex;
+    gap: 24px;
+}
+
+.exp-timeline {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 6px;
+    flex-shrink: 0;
+}
+
+.exp-dot {
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--accent), var(--accent-2));
+    box-shadow: 0 0 16px var(--accent-glow);
+    flex-shrink: 0;
+}
+
+.exp-line {
+    width: 2px;
+    flex: 1;
+    background: linear-gradient(180deg, var(--accent), transparent);
+    margin-top: 8px;
+    border-radius: 2px;
+}
+
+.exp-content {
+    flex: 1;
+}
+
+.exp-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: start;
+    gap: 16px;
+    flex-wrap: wrap;
+    margin-bottom: 16px;
+}
+
+.exp-header h3 {
+    font-size: 1.2rem;
+    font-weight: 700;
+    margin-bottom: 4px;
+}
+
+.exp-company {
+    color: var(--accent);
+    font-size: 0.95rem;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin: 0;
+}
+
+.exp-period {
+    font-size: 0.82rem;
+    color: var(--muted);
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid var(--line);
+    padding: 4px 14px;
+    border-radius: 999px;
+    white-space: nowrap;
+}
+
+.exp-desc {
+    color: var(--muted);
+    font-size: 0.92rem;
+    line-height: 1.7;
+    margin-bottom: 12px;
+}
+
+.exp-links {
+    margin-top: 16px;
+}
+
+.exp-links a {
+    color: var(--accent);
+    text-decoration: none;
+    font-size: 0.88rem;
+    font-weight: 500;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 16px;
+    border-radius: 999px;
+    background: rgba(114, 219, 255, 0.08);
+    border: 1px solid rgba(114, 219, 255, 0.2);
+    transition: all 0.3s ease;
+}
+
+.exp-links a:hover {
+    background: rgba(114, 219, 255, 0.15);
+    transform: translateY(-2px);
+}
+
+@media (max-width: 480px) {
+    .experience-card {
+        flex-direction: column;
+    }
+    .exp-timeline {
+        flex-direction: row;
+        padding-top: 0;
+    }
+    .exp-line {
+        height: 2px;
+        width: auto;
+        flex: 1;
+        margin-top: 0;
+        margin-left: 8px;
+        background: linear-gradient(90deg, var(--accent), transparent);
+    }
+    .exp-header {
+        flex-direction: column;
+    }
 }
 
 /* ── About ── */
@@ -896,10 +1054,15 @@ nav a.active {
 }
 
 .project-list .reveal:nth-child(2) { transition-delay: 0.1s; }
-.project-list .reveal:nth-child(3) { transition-delay: 0.2s; }
+.project-list .reveal:nth-child(3) { transition-delay: 0.15s; }
+.project-list .reveal:nth-child(4) { transition-delay: 0.2s; }
+.project-list .reveal:nth-child(5) { transition-delay: 0.25s; }
+.project-list .reveal:nth-child(6) { transition-delay: 0.3s; }
 .skills-categories .reveal:nth-child(2) { transition-delay: 0.1s; }
-.skills-categories .reveal:nth-child(3) { transition-delay: 0.2s; }
-.skills-categories .reveal:nth-child(4) { transition-delay: 0.3s; }
+.skills-categories .reveal:nth-child(3) { transition-delay: 0.15s; }
+.skills-categories .reveal:nth-child(4) { transition-delay: 0.2s; }
+.skills-categories .reveal:nth-child(5) { transition-delay: 0.25s; }
+.skills-categories .reveal:nth-child(6) { transition-delay: 0.3s; }
 .cert-grid .reveal:nth-child(2) { transition-delay: 0.1s; }
 .cert-grid .reveal:nth-child(3) { transition-delay: 0.2s; }
 
@@ -926,6 +1089,27 @@ nav a.active {
 @keyframes dotPulse {
     0%, 100% { box-shadow: 0 0 14px var(--accent); }
     50% { box-shadow: 0 0 24px var(--accent), 0 0 48px rgba(114, 219, 255, 0.2); }
+}
+
+@keyframes orbDriftA {
+    0%, 100% { top: 5%; left: -120px; opacity: 0.35; }
+    25% { top: 12%; left: -40px; opacity: 0.4; }
+    50% { top: 2%; left: 60px; opacity: 0.3; }
+    75% { top: 15%; left: -80px; opacity: 0.38; }
+}
+
+@keyframes orbDriftB {
+    0%, 100% { top: 40%; right: -100px; opacity: 0.35; }
+    25% { top: 35%; right: -20px; opacity: 0.3; }
+    50% { top: 50%; right: -60px; opacity: 0.4; }
+    75% { top: 42%; right: 20px; opacity: 0.32; }
+}
+
+@keyframes orbDriftC {
+    0%, 100% { bottom: -50px; left: 40%; opacity: 0.35; }
+    25% { bottom: 10px; left: 35%; opacity: 0.3; }
+    50% { bottom: -20px; left: 50%; opacity: 0.4; }
+    75% { bottom: 30px; left: 42%; opacity: 0.32; }
 }
 
 /* ── Responsive ── */

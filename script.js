@@ -194,10 +194,10 @@ window.addEventListener('scroll', () => {
    ═══════════════════════════════════════════ */
 const typingPhrases = [
     'Computer Science Graduate',
+    'Programmer',
     'Full-Stack Developer',
-    'Machine Learning Enthusiast',
-    'Problem Solver',
-    'Data-Driven Thinker'
+    'AI Enthusiast',
+    'Ex-Huawei Cloud Intern'
 ];
 
 let phraseIndex = 0;
@@ -313,7 +313,19 @@ function showToast(message) {
 if (dom.contactForm) {
     dom.contactForm.addEventListener('submit', event => {
         event.preventDefault();
-        showToast('Message sent! Connect this form to your backend.');
-        dom.contactForm.reset();
+        const formData = new FormData(dom.contactForm);
+
+        fetch('/', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+            body: new URLSearchParams(formData).toString()
+        })
+        .then(() => {
+            showToast('Message sent! I\'ll get back to you soon.');
+            dom.contactForm.reset();
+        })
+        .catch(() => {
+            showToast('Something went wrong. Please try again.');
+        });
     });
 }
