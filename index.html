@@ -27,14 +27,21 @@
         </a>
         <nav>
             <span class="nav-indicator" id="navIndicator"></span>
-            <a href="#experience">Experience</a>
-            <a href="#projects">Projects</a>
-            <a href="#skills">Skills</a>
-            <a href="#certifications">Certifications</a>
-            <a href="#awards">Awards</a>
-            <a href="#about">About</a>
-            <a href="#contact">Contact</a>
+            <a href="#experience" data-i18n="nav.experience">Experience</a>
+            <a href="#projects" data-i18n="nav.projects">Projects</a>
+            <a href="#skills" data-i18n="nav.skills">Skills</a>
+            <a href="#certifications" data-i18n="nav.certifications">Certifications</a>
+            <a href="#awards" data-i18n="nav.awards">Awards</a>
+            <a href="#about" data-i18n="nav.about">About</a>
+            <a href="#contact" data-i18n="nav.contact">Contact</a>
         </nav>
+        <div class="lang-toggle-wrap">
+            <button class="lang-toggle" id="langToggle" aria-label="Switch language">中文</button>
+            <div class="lang-hint" id="langHint">
+                <span>Available in 中文<br>可切换中文版</span>
+                <div class="lang-hint-arrow"></div>
+            </div>
+        </div>
         <button class="mobile-toggle" aria-label="Toggle menu">
             <span></span><span></span><span></span>
         </button>
@@ -44,20 +51,20 @@
         <!-- Hero -->
         <section id="home" class="hero section">
             <div class="hero-content">
-                <p class="hero-greeting">Hello, I'm</p>
+                <p class="hero-greeting" data-i18n="hero.greeting">Hello, I'm</p>
                 <h1 class="hero-name" id="heroName">Kimberley</h1>
                 <div class="hero-tagline">
                     <span class="typing-text" id="typingText"></span>
                     <span class="typing-cursor">|</span>
                 </div>
-                <p class="hero-description">
+                <p class="hero-description" data-i18n="hero.desc">
                     CS graduate and ex-Huawei Cloud intern with hands-on experience in MLOps,
                     full-stack development, and AI-powered applications. I build end-to-end
                     solutions from deep learning models to cloud-deployed APIs.
                 </p>
                 <div class="hero-cta">
-                    <a href="#projects" class="btn btn-primary magnetic">View My Work</a>
-                    <a href="#contact" class="btn btn-ghost magnetic">Get In Touch</a>
+                    <a href="#projects" class="btn btn-primary magnetic" data-i18n="hero.cta.work">View My Work</a>
+                    <a href="#contact" class="btn btn-ghost magnetic" data-i18n="hero.cta.contact">Get In Touch</a>
                     <div class="hero-socials">
                         <a href="https://github.com/k-cmy" target="_blank" rel="noopener" aria-label="GitHub" class="magnetic"><i class="fab fa-github"></i></a>
                         <a href="https://www.linkedin.com/in/kimberley-chung-min-yi/" aria-label="LinkedIn" class="magnetic"><i class="fab fa-linkedin"></i></a>
@@ -69,8 +76,8 @@
 
         <!-- Experience -->
         <section id="experience" class="section">
-            <p class="eyebrow center">Experience</p>
-            <h2 class="section-title center">Work Experience</h2>
+            <p class="eyebrow center" data-i18n="exp.eyebrow">Experience</p>
+            <h2 class="section-title center" data-i18n="exp.title">Work Experience</h2>
 
             <div class="experience-card glass tilt-card reveal">
                 <div class="card-glow"></div>
@@ -81,13 +88,13 @@
                 <div class="exp-content">
                     <div class="exp-header">
                         <div>
-                            <h3>Cloud Solutions Architect Intern</h3>
-                            <p class="exp-company"><img src="https://cdn.simpleicons.org/huawei/fff" alt="Huawei" width="16" height="16" /> Huawei Cloud Malaysia</p>
+                            <h3 data-i18n="exp.role">Cloud Solutions Architect Intern</h3>
+                            <p class="exp-company"><img src="https://cdn.simpleicons.org/huawei/fff" alt="Huawei" width="16" height="16" /> <span data-i18n="exp.company">Huawei Cloud Malaysia</span></p>
                         </div>
                         <span class="exp-period">Nov 2024 – Feb 2025</span>
                     </div>
-                    <p class="exp-desc">Designed and deployed end-to-end MLOps automation pipelines on Huawei Cloud, enabling clients to predict future pricing by simply uploading data. Productionized an XGBoost model using ModelArts Workflow to automate training, model registration, and real-time service deployment across OBS, SWR, and ECS.</p>
-                    <p class="exp-desc">Built a serverless file transfer system using FunctionGraph that auto-triggers on OBS uploads, securely transfers files to SFTP servers via Paramiko, and handles credential management and retry logic for fault tolerance.</p>
+                    <p class="exp-desc" data-i18n="exp.desc1">Designed and deployed end-to-end MLOps automation pipelines on Huawei Cloud, enabling clients to predict future pricing by simply uploading data. Productionized an XGBoost model using ModelArts Workflow to automate training, model registration, and real-time service deployment across OBS, SWR, and ECS.</p>
+                    <p class="exp-desc" data-i18n="exp.desc2">Built a serverless file transfer system using FunctionGraph that auto-triggers on OBS uploads, securely transfers files to SFTP servers via Paramiko, and handles credential management and retry logic for fault tolerance.</p>
                     <div class="tech-tags">
                         <span>ModelArts</span>
                         <span>OBS</span>
@@ -100,7 +107,7 @@
                         <span>MLOps</span>
                     </div>
                     <div class="exp-links">
-                        <a href="https://k-cmy.github.io/Certificates/Internship%20Completion%20cert.pdf" target="_blank" rel="noopener"><i class="fas fa-certificate"></i> Completion Certificate</a>
+                        <a href="https://k-cmy.github.io/Certificates/Internship%20Completion%20cert.pdf" target="_blank" rel="noopener"><i class="fas fa-certificate"></i> <span data-i18n="exp.certLink">Completion Certificate</span></a>
                     </div>
                 </div>
             </div>
@@ -108,8 +115,8 @@
 
         <!-- Projects -->
         <section id="projects" class="section">
-            <p class="eyebrow center">Projects</p>
-            <h2 class="section-title center">Things I've Built</h2>
+            <p class="eyebrow center" data-i18n="proj.eyebrow">Projects</p>
+            <h2 class="section-title center" data-i18n="proj.title">Things I've Built</h2>
 
             <div class="project-list">
 
@@ -119,9 +126,9 @@
                         <div class="preview-placeholder"><i class="fas fa-university"></i></div>
                     </div>
                     <div class="project-body">
-                        <h3>67-Bank API <span class="project-badge">In Progress</span></h3>
+                        <h3>67-Bank API <span class="project-badge" data-i18n="proj.bank.badge">In Progress</span></h3>
                         <span class="project-date">Jan 2026 – Present</span>
-                        <p>Secure backend digital banking REST API with JWT-based stateless authentication, role-based access control (Admin, Customer, Auditor), user profile management, and async email notifications with custom Thymeleaf templates.</p>
+                        <p data-i18n="proj.bank.desc">Secure backend digital banking REST API with JWT-based stateless authentication, role-based access control (Admin, Customer, Auditor), user profile management, and async email notifications with custom Thymeleaf templates.</p>
                         <div class="tech-tags">
                             <span>Java 21</span>
                             <span>Spring Boot</span>
@@ -146,7 +153,7 @@
                     <div class="project-body">
                         <h3>RAG Financial Analyzer API </h3>
                         <span class="project-date">Feb 2026</span>
-                        <p>Backend API that ingests financial documents (PDF/TXT/MD), chunks and embeds them into a vector database, and answers questions through a Retrieval-Augmented Generation pipeline powered by Gemini LLM.</p>
+                        <p data-i18n="proj.rag.desc">Backend API that ingests financial documents (PDF/TXT/MD), chunks and embeds them into a vector database, and answers questions through a Retrieval-Augmented Generation pipeline powered by Gemini LLM.</p>
                         <div class="tech-tags">
                             <span>Python</span>
                             <span>FastAPI</span>
@@ -167,9 +174,9 @@
                         <div class="preview-placeholder"><i class="fas fa-image"></i></div>
                     </div>
                     <div class="project-body">
-                        <h3>Effective Color Cast Removal</h3>
-                        <span class="project-date">Mar 2025 – Jun 2025 · Final Year Project</span>
-                        <p>Full-stack web application for automatic color cast removal from images using a custom deep learning model trained with TensorFlow/Keras. Features a React dashboard with image comparison, RGB histogram visualization, and processing history, backed by a Flask API deployed on Google Cloud Run.</p>
+                        <h3 data-i18n="proj.ccr.name">Effective Color Cast Removal</h3>
+                        <span class="project-date" data-i18n="proj.ccr.date">Mar 2025 – Jun 2025 · Final Year Project</span>
+                        <p data-i18n="proj.ccr.desc">Full-stack web application for automatic color cast removal from images using a custom deep learning model trained with TensorFlow/Keras. Features a React dashboard with image comparison, RGB histogram visualization, and processing history, backed by a Flask API deployed on Google Cloud Run.</p>
                         <div class="tech-tags">
                             <span>TensorFlow</span>
                             <span>Keras</span>
@@ -180,10 +187,10 @@
                             <span>Docker</span>
                         </div>
                         <div class="project-actions">
-                            <a href="https://github.com/k-cmy/color_cast_removal" target="_blank" rel="noopener" class="btn btn-ghost btn-sm"><i class="fab fa-github"></i> Model</a>
-                            <a href="https://github.com/aphyueh/ccrfrontend" target="_blank" rel="noopener" class="btn btn-ghost btn-sm"><i class="fab fa-github"></i> Frontend</a>
-                            <a href="https://github.com/aphyueh/ccrbackend" target="_blank" rel="noopener" class="btn btn-ghost btn-sm"><i class="fab fa-github"></i> Backend</a>
-                            <a href="https://colorcastremoval.netlify.app/" target="_blank" rel="noopener" class="btn btn-primary btn-sm"><i class="fas fa-external-link-alt"></i> Live Site</a>
+                            <a href="https://github.com/k-cmy/color_cast_removal" target="_blank" rel="noopener" class="btn btn-ghost btn-sm"><i class="fab fa-github"></i> <span data-i18n="proj.btn.model">Model</span></a>
+                            <a href="https://github.com/aphyueh/ccrfrontend" target="_blank" rel="noopener" class="btn btn-ghost btn-sm"><i class="fab fa-github"></i> <span data-i18n="proj.btn.frontend">Frontend</span></a>
+                            <a href="https://github.com/aphyueh/ccrbackend" target="_blank" rel="noopener" class="btn btn-ghost btn-sm"><i class="fab fa-github"></i> <span data-i18n="proj.btn.backend">Backend</span></a>
+                            <a href="https://colorcastremoval.netlify.app/" target="_blank" rel="noopener" class="btn btn-primary btn-sm"><i class="fas fa-external-link-alt"></i> <span data-i18n="proj.btn.live">Live Site</span></a>
                         </div>
                     </div>
                 </article>
@@ -195,8 +202,8 @@
                     </div>
                     <div class="project-body">
                         <h3>AWAS Streaming System</h3>
-                        <span class="project-date">May 2025 · FIT3182 Big Data</span>
-                        <p>Real-time speed enforcement platform simulating a three-camera highway segment. Kafka producers stream vehicle events into Spark Structured Streaming for violation detection (instantaneous and average speed), with results stored in MongoDB and visualized via interactive dashboards.</p>
+                        <span class="project-date" data-i18n="proj.awas.date">May 2025 · FIT3182 Big Data</span>
+                        <p data-i18n="proj.awas.desc">Real-time speed enforcement platform simulating a three-camera highway segment. Kafka producers stream vehicle events into Spark Structured Streaming for violation detection (instantaneous and average speed), with results stored in MongoDB and visualized via interactive dashboards.</p>
                         <div class="tech-tags">
                             <span>Apache Kafka</span>
                             <span>Spark Streaming</span>
@@ -217,9 +224,9 @@
                         <div class="preview-placeholder"><i class="fas fa-gamepad"></i></div>
                     </div>
                     <div class="project-body">
-                        <h3>Tetris Game</h3>
-                        <span class="project-date">Aug 2023 – Sep 2023 · FIT 2102 Programming Paradigms</span>
-                        <p>Reactive rendition of the classic Tetris game built with Functional Reactive Programming principles. Uses RxJS observables for game state management, keyboard input streams, and tick-based rendering for a clean, declarative codebase.</p>
+                        <h3 data-i18n="proj.tetris.name">Tetris Game</h3>
+                        <span class="project-date" data-i18n="proj.tetris.date">Aug 2023 – Sep 2023 · FIT 2102 Programming Paradigms</span>
+                        <p data-i18n="proj.tetris.desc">Reactive rendition of the classic Tetris game built with Functional Reactive Programming principles. Uses RxJS observables for game state management, keyboard input streams, and tick-based rendering for a clean, declarative codebase.</p>
                         <div class="tech-tags">
                             <span>TypeScript</span>
                             <span>RxJS</span>
@@ -228,7 +235,7 @@
                             <span>FRP</span>
                         </div>
                         <div class="project-actions">
-                            <a href="https://kcmy-tetris-game-rxjs.netlify.app/" target="_blank" rel="noopener" class="btn btn-primary btn-sm"><i class="fas fa-external-link-alt"></i> Live Site</a>
+                            <a href="https://kcmy-tetris-game-rxjs.netlify.app/" target="_blank" rel="noopener" class="btn btn-primary btn-sm"><i class="fas fa-external-link-alt"></i> <span data-i18n="proj.btn.live">Live Site</span></a>
                         </div>
                     </div>
                 </article>
@@ -238,13 +245,13 @@
 
         <!-- Skills -->
         <section id="skills" class="section">
-            <p class="eyebrow center">Skills</p>
-            <h2 class="section-title center">Technologies & Tools</h2>
+            <p class="eyebrow center" data-i18n="skills.eyebrow">Skills</p>
+            <h2 class="section-title center" data-i18n="skills.title">Technologies & Tools</h2>
 
             <div class="skills-categories">
                 <div class="skill-category glass tilt-card reveal">
                     <div class="card-glow"></div>
-                    <h3><i class="fas fa-code"></i> Languages</h3>
+                    <h3><i class="fas fa-code"></i> <span data-i18n="skills.cat.lang">Languages</span></h3>
                     <div class="skill-list">
                         <span class="skill-pill"><i class="fab fa-python"></i> Python</span>
                         <span class="skill-pill"><i class="fab fa-java"></i> Java</span>
@@ -260,7 +267,7 @@
 
                 <div class="skill-category glass tilt-card reveal">
                     <div class="card-glow"></div>
-                    <h3><i class="fas fa-brain"></i> AI & Machine Learning</h3>
+                    <h3><i class="fas fa-brain"></i> <span data-i18n="skills.cat.ai">AI & Machine Learning</span></h3>
                     <div class="skill-list">
                         <span class="skill-pill"><i class="fas fa-network-wired"></i> TensorFlow</span>
                         <span class="skill-pill"><i class="fas fa-network-wired"></i> Keras</span>
@@ -276,7 +283,7 @@
 
                 <div class="skill-category glass tilt-card reveal">
                     <div class="card-glow"></div>
-                    <h3><i class="fas fa-database"></i> Data & Analytics</h3>
+                    <h3><i class="fas fa-database"></i> <span data-i18n="skills.cat.data">Data & Analytics</span></h3>
                     <div class="skill-list">
                         <span class="skill-pill"><i class="fas fa-table"></i> Pandas</span>
                         <span class="skill-pill"><i class="fas fa-calculator"></i> NumPy</span>
@@ -292,7 +299,7 @@
 
                 <div class="skill-category glass tilt-card reveal">
                     <div class="card-glow"></div>
-                    <h3><i class="fas fa-server"></i> Frameworks & Backend</h3>
+                    <h3><i class="fas fa-server"></i> <span data-i18n="skills.cat.frameworks">Frameworks & Backend</span></h3>
                     <div class="skill-list">
                         <span class="skill-pill"><i class="fas fa-leaf"></i> Spring Boot</span>
                         <span class="skill-pill"><i class="fas fa-bolt"></i> FastAPI</span>
@@ -305,7 +312,7 @@
 
                 <div class="skill-category glass tilt-card reveal">
                     <div class="card-glow"></div>
-                    <h3><i class="fas fa-cloud"></i> Cloud & MLOps</h3>
+                    <h3><i class="fas fa-cloud"></i> <span data-i18n="skills.cat.cloud">Cloud & MLOps</span></h3>
                     <div class="skill-list">
                         <span class="skill-pill"><i class="fab fa-docker"></i> Docker</span>
                         <span class="skill-pill"><i class="fab fa-aws"></i> AWS S3</span>
@@ -321,7 +328,7 @@
 
                 <div class="skill-category glass tilt-card reveal">
                     <div class="card-glow"></div>
-                    <h3><i class="fas fa-tools"></i> Developer Tools</h3>
+                    <h3><i class="fas fa-tools"></i> <span data-i18n="skills.cat.tools">Developer Tools</span></h3>
                     <div class="skill-list">
                         <span class="skill-pill"><i class="fab fa-git-alt"></i> Git</span>
                         <span class="skill-pill"><i class="fab fa-github"></i> GitHub</span>
@@ -339,15 +346,15 @@
 
         <!-- Certifications -->
         <section id="certifications" class="section">
-            <p class="eyebrow center">Certifications</p>
-            <h2 class="section-title center">Continuous Learning</h2>
+            <p class="eyebrow center" data-i18n="cert.eyebrow">Certifications</p>
+            <h2 class="section-title center" data-i18n="cert.title">Continuous Learning</h2>
 
             <div class="cert-grid">
                 <a href="https://k-cmy.github.io/Certificates/010102601495809663011409.pdf" target="_blank" rel="noopener" class="cert-card glass tilt-card reveal cert-link">
                     <div class="card-glow"></div>
                     <div class="cert-icon"><img src="https://cdn.simpleicons.org/huawei/fff" alt="Huawei" width="28" height="28" /></div>
                     <h3>HCIA – Cloud Service V3.5</h3>
-                    <p>Huawei Certified ICT Associate</p>
+                    <p data-i18n="cert.hcia.issuer">Huawei Certified ICT Associate</p>
                     <span class="cert-date">Dec 2024 – Dec 2027</span>
                 </a>
                 <a href="https://www.datacamp.com/statement-of-accomplishment/course/e218cd9b8f274b376e8a87d60bb61ec709c0d9b5?raw=1" target="_blank" rel="noopener" class="cert-card glass tilt-card reveal cert-link">
@@ -360,7 +367,7 @@
                 <a href="https://www.linkedin.com/learning/certificates/6e6de2f7cbd7bda3d296c01d0a2983424aefa9b1ca9f60703a847b928fc41524" target="_blank" rel="noopener" class="cert-card glass tilt-card reveal cert-link">
                     <div class="card-glow"></div>
                     <div class="cert-icon"> <i class="fab fa-linkedin" style="font-size:28px; color:#fff;"></i> </div>
-                    <h3>Complete Guide to Power BI for Data Analysts</h3>
+                    <h3 data-i18n="cert.powerbi.name">Complete Guide to Power BI for Data Analysts</h3>
                     <p>LinkedIn Learning · Microsoft Press</p>
                     <span class="cert-date">Jul 2024</span>
                 </a>
@@ -370,21 +377,21 @@
         
         <!-- Awards -->
         <section id="awards" class="section">
-            <p class="eyebrow center">Awards</p>
-            <h2 class="section-title center">Recognition</h2>
+            <p class="eyebrow center" data-i18n="awards.eyebrow">Awards</p>
+            <h2 class="section-title center" data-i18n="awards.title">Recognition</h2>
 
             <div class="award-card glass tilt-card reveal">
                 <div class="card-glow"></div>
                 <div class="award-badge"><i class="fas fa-trophy"></i></div>
                 <div class="award-content">
-                    <h3>1st Runner Up — SOIT Outstanding FYP Award</h3>
-                    <p>Monash University Malaysia</p>
-                    <p class="award-detail">
+                    <h3 data-i18n="awards.fyp.name">1st Runner Up — SOIT Outstanding FYP Award</h3>
+                    <p data-i18n="awards.fyp.org">Monash University Malaysia</p>
+                    <p class="award-detail" data-i18n="awards.fyp.detail">
                         Awarded second prize at the Computer Science and Data Science Final Year Project (FYP) Award Day, organized by the School of Information Technology (SOIT) in collaboration with Ant International.
                     </p>
                     <span class="award-period">11 June 2025</span>
                     <div class="exp-links" style="margin-top:12px">
-                        <a href="https://k-cmy.github.io/Certificates/FYP%20Award%20cert%20merged.pdf" target="_blank" rel="noopener"><i class="fas fa-certificate"></i> View Certificate</a>
+                        <a href="https://k-cmy.github.io/Certificates/FYP%20Award%20cert%20merged.pdf" target="_blank" rel="noopener"><i class="fas fa-certificate"></i> <span data-i18n="awards.fyp.certLink">View Certificate</span></a>
                     </div>
                 </div>
             </div>
@@ -393,24 +400,24 @@
 
         <!-- About -->
         <section id="about" class="section">
-            <p class="eyebrow center">About</p>
-            <h2 class="section-title center">A Little About Me</h2>
+            <p class="eyebrow center" data-i18n="about.eyebrow">About</p>
+            <h2 class="section-title center" data-i18n="about.title">A Little About Me</h2>
 
             <div class="about-card glass tilt-card reveal">
                 <div class="card-glow"></div>
                 <div class="about-content">
-                    <p>
+                    <p data-i18n="about.p1">
                         Hi! I'm Kimberley -- a Computer Science (Data Science) graduate from Monash University Malaysia
                         and former Cloud Solutions Architect intern at Huawei. I've built everything from RAG-powered
                         AI APIs and deep learning models to real-time big data streaming pipelines and full-stack
                         web applications deployed on the cloud.
                     </p>
-                    <p>
+                    <p data-i18n="about.p2">
                         I'm currently seeking roles in full-stack development, backend engineering, cloud architecture,
                         AI/ML engineering, or data science -- anywhere I can solve real problems with code and continue
                         growing as an engineer.
                     </p>
-                    <p>
+                    <p data-i18n-html="about.p3">
                         <strong>Fun fact:</strong> Before I got into tech, I was a Malaysian national-trained
                         <a href="https://www.gymnastics.sport/site/athletes/bio_detail.php?id=44301&type=licence" target="_blank" rel="noopener" style="color:var(--accent)">rhythmic gymnast</a>
                         -- so I'm no stranger to discipline, precision, and pushing past limits.
@@ -418,19 +425,19 @@
                     <div class="about-highlights">
                         <div class="highlight-item">
                             <i class="fas fa-graduation-cap"></i>
-                            <span>BSc Computer Science in Data Science</span>
+                            <span data-i18n="about.hl.degree">BSc Computer Science in Data Science</span>
                         </div>
                         <div class="highlight-item">
                             <i class="fas fa-globe"></i>
-                            <span>Open to On-Site/Remote/Hybrid</span>
+                            <span data-i18n="about.hl.remote">Open to On-Site/Remote/Hybrid</span>
                         </div>
                         <div class="highlight-item">
                             <i class="fas fa-map-marker-alt"></i>
-                            <span>Open to Full-Time Graduate/Junior Roles</span>
+                            <span data-i18n="about.hl.roles">Open to Full-Time Graduate/Junior Roles</span>
                         </div>
                         <div class="highlight-item">
                             <i class="fas fa-rocket"></i>
-                            <span>Full-Stack, Cloud, Data & AI</span>
+                            <span data-i18n="about.hl.focus">Full-Stack, Cloud, Data & AI</span>
                         </div>
                     </div>
                 </div>
@@ -439,12 +446,12 @@
 
         <!-- Contact -->
         <section id="contact" class="section">
-            <p class="eyebrow center">Contact</p>
-            <h2 class="section-title center">Get In Touch</h2>
+            <p class="eyebrow center" data-i18n="contact.eyebrow">Contact</p>
+            <h2 class="section-title center" data-i18n="contact.title">Get In Touch</h2>
 
             <div class="contact-wrapper">
                 <div class="contact-info glass reveal">
-                    <p>
+                    <p data-i18n="contact.blurb">
                         I'm currently looking for new opportunities. Whether you have a question,
                         a project idea, or just want to say hi -- my inbox is always open!
                     </p>
@@ -460,17 +467,17 @@
                     <input type="hidden" name="_subject" value="New message from your portfolio!" />
                     <input type="hidden" name="_captcha" value="false" />
                     <input type="hidden" name="_template" value="table" />
-                    <input type="text" name="name" placeholder="Your name" required />
-                    <input type="email" name="email" placeholder="Your email" required />
-                    <textarea name="message" rows="5" placeholder="Your message" required></textarea>
-                    <button type="submit" class="btn btn-primary magnetic">Send Message</button>
+                    <input type="text" name="name" data-i18n-placeholder="contact.ph.name" placeholder="Your name" required />
+                    <input type="email" name="email" data-i18n-placeholder="contact.ph.email" placeholder="Your email" required />
+                    <textarea name="message" rows="5" data-i18n-placeholder="contact.ph.msg" placeholder="Your message" required></textarea>
+                    <button type="submit" class="btn btn-primary magnetic" data-i18n="contact.send">Send Message</button>
                 </form>
             </div>
         </section>
     </main>
 
     <footer class="footer">
-        <p>Designed & Built by Min Yi Chung (Kimberley)</p>
+        <p data-i18n="footer.credit">Designed & Built by Min Yi Chung (Kimberley)</p>
     </footer>
 
     <script src="script.js"></script>
