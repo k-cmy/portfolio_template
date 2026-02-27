@@ -42,6 +42,8 @@ const translations = {
         "proj.tetris.date": "Aug 2023 – Sep 2023 · FIT 2102 Programming Paradigms",
         "proj.tetris.desc": "Reactive rendition of the classic Tetris game built with Functional Reactive Programming principles. Uses RxJS observables for game state management, keyboard input streams, and tick-based rendering for a clean, declarative codebase.",
 
+        "brand.name": "Min Yi Chung (Kimberley)",
+
         "skills.eyebrow": "Skills",
         "skills.title": "Technologies & Tools",
         "skills.cat.lang": "Languages",
@@ -135,6 +137,8 @@ const translations = {
         "proj.tetris.date": "2023年8月 – 2023年9月 · FIT 2102 编程范式",
         "proj.tetris.desc": "使用函数式响应编程原则构建的经典俄罗斯方块游戏。使用RxJS可观察对象进行游戏状态管理、键盘输入流和基于时钟的渲染，实现简洁的声明式代码库。",
 
+        "brand.name": "曾敏苡 (Kimberley)",
+
         "skills.eyebrow": "技能",
         "skills.title": "技术与工具",
         "skills.cat.lang": "编程语言",
@@ -174,7 +178,7 @@ const translations = {
         "contact.ph.msg": "您的留言",
         "contact.send": "发送消息",
 
-        "footer.credit": "由钟旻怡 (Kimberley) 设计与开发",
+        "footer.credit": "由曾敏苡 (Kimberley) 设计与开发",
 
         "toast.success": "消息已发送！我会尽快回复您。",
         "toast.error": "出了点问题，请重试。",
